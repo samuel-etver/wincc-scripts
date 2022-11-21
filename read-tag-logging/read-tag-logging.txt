@@ -1,0 +1,105 @@
+Function IntToStr02(Value)
+  If Value < 10 Then
+    IntToStr02 = "0" & CStr(Value)
+  Else
+    IntToStr02 = CStr(Value)
+  End If
+End Function
+
+
+Sub SaveReport
+  Dim DtTm
+  Dim DayVal, MonVal, YearVal
+  Dim HourVal, MinVal, SecVal
+  Dim ObjConn, ObjRS
+  Dim ObjFS, ObjFile, ObjTextStream
+  Dim FileName
+  Dim Delimiter
+  Dim TempDtTm
+  Dim ObjShell
+  Dim OffsetInMinutes
+  Dim Folder
+  Dim Catalog
+  
+  Delimiter = Chr(9)
+  Folder = "c:\Temp\"
+  Catalog = "CC_two_22_10_18_08_56_41R"
+  
+  Set ObjShell = CreateObject("WScript.Shell")
+  OffsetInMinutes = ObjShell.RegRead( _
+   "HKEY_LOCAL_MACHINE\System\CurrentControlSet\" & _
+   "Control\TimeZoneInformation\ActiveTimeBias")  
+  Set ObjShell = Nothing
+  
+  DtTm = Now
+  DayVal = DatePart("d", DtTm)
+  MonVal = DatePart("m", DtTm)
+  YearVal = DatePart("yyyy", DtTm)
+  HourVal = DatePart("h", DtTm)
+  MinVal = DatePart("n", DtTm)
+  SecVal = DatePart("s", DtTm)
+  
+  Set ObjFS = CreateObject("Scripting.FileSystemObject")
+  
+  FileName = Folder & "длина (" & _
+    IntToStr02(YearVal) & "-" & _
+    IntToStr02(MonVal) & "-" & _
+    IntToStr02(DayVal) & "___" & _
+    IntToStr02(HourVal) & "-" & _
+    IntToStr02(MinVal) & "-" & _
+    IntToStr02(SecVal) & ").csv"
+  ObjFS.CreateTextFile FileName
+  
+  Set ObjFile = ObjFS.GetFile(FileName)
+  Set ObjTextStream = ObjFile.OpenAsTextStream(8, -2)
+  ObjTextStream.WriteLine("""Дата\Время""" & Delimiter & """Длина""")   
+ 
+  Set ObjConn = CreateObject("ADODB.Connection")
+  ObjConn.ConnectionString = "Provider=WinCCOLEDBProvider.1;" & _
+   "Catalog=" & Catalog & _
+   ";Data Source=.\WinCC" 
+  ObjConn.CursorLocation = 3
+  ObjConn.Open
+ 
+  Set ObjRS = CreateObject("ADODB.Recordset")
+  ObjRS.Open "Tag:R,'a1\t1','0000-00-00 24:00:00.000','0000-00-00 00:00:00.000'", ObjConn, 1, 3 	
+  
+  ObjRS.MoveFirst
+  Do While Not ObjRS.EOF
+    TempDtTm = ObjRS.Fields(1).Value
+    TempDtTm = DateAdd("n", -OffsetInMinutes, TempDtTm)
+    ObjTextStream.WriteLine(CStr(TempDtTm) & Delimiter & ObjRS.Fields(3).Value)
+    ObjRS.MoveNext
+  Loop
+  
+  ObjRS.Close
+  Set ObjRS = Nothing
+  ObjConn.Close
+  Set ObjConn = Nothing
+  
+  ObjTextStream.Close
+  Set ObjFile = Nothing
+End Sub
+
+
+Sub SaveReportIfRequired
+  Dim DtTm, DayVal, HourVal
+  Dim ObjReportDtTm, ReportDtTm, ReportDayVal
+  
+  DtTm = Now
+  DayVal = DatePart("d", DtTm)
+  HourVal = DatePart("h", DtTm)
+  
+  Set ObjReportDtTm = HMIRuntime.Tags("ReportDateTime")
+  ObjReportDtTm.Read  
+  ReportDtTm = ObjReportDtTm.Value
+  ReportDayVal = DatePart("d", ReportDtTm)
+  
+  If (DayVal <> ReportDayVal) And (HourVal = 8) Then
+    ObjReportDtTm.Value = DtTm
+    ObjReportDtTm.Write
+    Call SaveReport
+  End If  
+
+  Set ObjReportDtTm = Nothing
+End Sub
