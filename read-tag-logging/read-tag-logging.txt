@@ -41,7 +41,7 @@ Sub SaveReport
   
   Set ObjFS = CreateObject("Scripting.FileSystemObject")
   
-  FileName = Folder & "длина (" & _
+  FileName = Folder & "length (" & _
     IntToStr02(YearVal) & "-" & _
     IntToStr02(MonVal) & "-" & _
     IntToStr02(DayVal) & "___" & _
@@ -52,7 +52,7 @@ Sub SaveReport
   
   Set ObjFile = ObjFS.GetFile(FileName)
   Set ObjTextStream = ObjFile.OpenAsTextStream(8, -2)
-  ObjTextStream.WriteLine("""Дата\Время""" & Delimiter & """Длина""")   
+  ObjTextStream.WriteLine("""Date\Time""" & Delimiter & """Length""")   
  
   Set ObjConn = CreateObject("ADODB.Connection")
   ObjConn.ConnectionString = "Provider=WinCCOLEDBProvider.1;" & _
