@@ -1,0 +1,65 @@
+
+#include "GlobalDefinitions.h" 
+
+#pragma pack(1)
+
+typedef struct TRec {
+    unsigned char A;
+    unsigned short int B;
+    unsigned char C;	
+};
+
+
+void TestButton1_Click()
+{
+#pragma code("c:/TiaExtLib/Tia_Lazarus.dll")
+    void DoSomething();
+
+    short int GetInt16();
+    int GetInt32();
+    long long GetInt64();
+    float GetFloat32();
+    double GetFloat64();
+
+    void SetInt16(short int value);
+    void SetInt32(int value); 
+    void SetInt64(long long value);
+    void SetFloat32(float value);
+    void SetFloat64(double value);
+
+    struct TRec GetRec();
+    void GetPRec(struct TRec* p);
+    void SetRec(struct TRec rec);
+    void SetPRec(struct TRec* p); 
+
+    void GetPStr(char* buff);
+    void SetPStr(char* buff);
+
+#pragma code()
+
+    char buff[64];
+    struct TRec rec;
+
+    DoSomething();
+
+    SetInt16(1);
+    SetInt32(2);
+    SetInt64(3);
+    SetFloat32(10.1f);
+    SetFloat64(12.6);
+	
+    GetInt16();
+    GetInt32();
+    GetInt64();
+    GetFloat32();
+    GetFloat64();
+
+    rec = GetRec();
+    GetPRec(&rec);
+
+    SetRec(rec);
+    SetPRec(&rec);
+
+    GetPStr(buff);
+    SetPStr(buff);
+}
