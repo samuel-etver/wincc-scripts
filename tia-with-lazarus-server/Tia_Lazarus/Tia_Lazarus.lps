@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="Tia_Lazarus.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <TopLine Value="2"/>
+        <CursorPos X="29" Y="19"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Mes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="287"/>
+        <CursorPos Y="409"/>
+        <UsageCount Value="204"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="global.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Global"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="21"/>
+        <CursorPos X="16" Y="34"/>
+        <UsageCount Value="204"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="MesThr.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="329"/>
+        <CursorPos X="25" Y="310"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="PipeNum.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="9"/>
+        <CursorPos X="15" Y="13"/>
+        <UsageCount Value="205"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Net.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="475"/>
+        <CursorPos X="29" Y="496"/>
+        <UsageCount Value="120"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <CursorPos Y="19"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="messerver.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MesServer"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="159"/>
+        <CursorPos X="11" Y="184"/>
+        <UsageCount Value="95"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Archive.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="151"/>
+        <CursorPos X="10" Y="18"/>
+        <UsageCount Value="55"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="archiveserver.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ArchiveServer"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <CursorPos Y="21"/>
+        <UsageCount Value="52"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="test.pas"/>
+        <UnitName Value="Test"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="95"/>
+        <CursorPos X="36" Y="126"/>
+        <UsageCount Value="196"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\win\sysutils.pp"/>
+        <UnitName Value="SysUtils"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="40"/>
+        <CursorPos X="3" Y="54"/>
+        <UsageCount Value="7"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\win\wininc\struct.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4262"/>
+        <CursorPos X="26" Y="4262"/>
+        <UsageCount Value="7"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\classes\classes.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="431"/>
+        <CursorPos X="4" Y="441"/>
+        <UsageCount Value="1"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="16" TopLine="2"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="183" Column="8" TopLine="150"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="178" TopLine="149"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="202" Column="2" TopLine="162"/>
+      </Position>
+      <Position>
+        <Filename Value="global.pas"/>
+        <Caret Line="32" Column="27" TopLine="8"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="323" Column="2" TopLine="300"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="292" Column="7" TopLine="269"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="331" Column="2" TopLine="300"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="28" Column="2" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="81" Column="57" TopLine="61"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="27" Column="67"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="405" Column="2" TopLine="368"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="406" Column="18" TopLine="392"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="414" TopLine="408"/>
+      </Position>
+      <Position>
+        <Filename Value="archiveserver.pas"/>
+        <Caret Line="31" Column="22"/>
+      </Position>
+      <Position>
+        <Filename Value="archiveserver.pas"/>
+        <Caret Line="34" Column="42"/>
+      </Position>
+      <Position>
+        <Filename Value="Tia_Lazarus.lpr"/>
+        <Caret Line="22" Column="33"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="105" TopLine="90"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="120" TopLine="97"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="104" Column="4" TopLine="81"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="111" Column="47" TopLine="88"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="110" Column="48" TopLine="88"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="182" Column="15" TopLine="159"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="62" Column="3" TopLine="39"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="182" Column="39" TopLine="159"/>
+      </Position>
+      <Position>
+        <Filename Value="Net.pas"/>
+        <Caret Line="119" Column="53" TopLine="88"/>
+      </Position>
+      <Position>
+        <Filename Value="Tia_Lazarus.lpr"/>
+        <Caret Line="10" Column="29"/>
+      </Position>
+      <Position>
+        <Filename Value="messerver.pas"/>
+        <Caret Line="61" Column="47" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="archiveserver.pas"/>
+        <Caret Line="28" TopLine="13"/>
+      </Position>
+      <Position>
+        <Filename Value="archiveserver.pas"/>
+        <Caret Line="43" Column="27" TopLine="19"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
