@@ -1,0 +1,63 @@
+
+#pragma pack(1)
+struct TMesStatus
+{
+    int State;
+    int LoopCount;
+}  TMesStatus;
+
+#pragma pack(1)
+struct TMesPipeNumberData
+{
+    char* Number;
+    char* Diameter;
+    char* Thickness;
+    char* PersonnelNo;
+};
+
+struct TMesStatus MesStatus;
+
+struct TMesPipeNumberData MesData;
+
+char PipeNumber[64];
+char PipeDiameter[64];
+char PipeThickness[64];
+char PersonnelNo[64];
+
+int FromPort;
+int ToPort;
+
+void MesServer()
+{
+#pragma code("c:/Projects/WeldingSimatic/Tia_Lazarus/Tia_Lazarus.dll")
+    void MesServerRun();
+    void MesSetFromServerPort(int Port);
+    void MesSetToServerPort(int Port);
+    void MesGetStatus(struct TMesStatus* Status);
+    int MesGetPipeNumberData(struct TMesPipeNumberData* Data);
+#pragma code()
+
+    FromPort = GetTagSDWord("MesFromPortTag");
+    MesSetFromServerPort(FromPort);
+
+    ToPort = GetTagSDWord("MesToPortTag");
+    MesSetToServerPort(ToPort);
+
+    MesServerRun();
+
+    MesGetStatus(&MesStatus);
+    SetTagSDWord("MesTempTag", MesStatus.LoopCount);
+    SetTag("MesStateTag", MesStatus.State ? "NO" : "YES");
+
+    MesData.Number = PipeNumber;
+    MesData.Diameter = PipeDiameter;
+    MesData.Thickness = PipeThickness;
+    MesData.PersonnelNo = PersonnelNo;
+    if (MesGetPipeNumberData(&MesData))
+    {
+        SetTag("MesPipeNumberTag", PipeNumber);
+        SetTag("MesPipeDiameterTag", PipeDiameter);
+        SetTag("MesPipeThicknessTag", PipeThickness);
+        SetTag("MesPersonnelNoTag", PersonnelNo);
+    }
+}
